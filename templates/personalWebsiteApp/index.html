@@ -56,32 +56,35 @@
                 </div>
             </div>
             <div class="col py-3" id="main-content-area">
-                <!-- Done stupidly, I know -->
                 {% if url == "" %}
 
                 <p class="h1 header-text">Home Page</p>
                 <hr>
                 <p>Hello! Welcome to my website.</p>
+                <img src="{% static 'images/under-construction.jpg' %}" height="200px" width="200px">
 
                 {% elif url == "about-me" %}
 
                 <p class="h1 header-text">About Me</p>
                 <hr>
                 <p>I am Gabe.</p>
+                <img src="{% static 'images/under-construction.jpg' %}" height="200px" width="200px">
 
                 {% elif url == "about-website" %}
 
                 <p class="h1 header-text">About This Website</p>
                 <hr>
                 <p>I made it.</p>
-                <img src="{% static 'images/django-logo.svg' %}" height="200px" width="200px">
-                <img src="{% static 'images/bootstrap-logo.svg' %}" height="200px" width="200px">
+                <img src="{% static 'images/under-construction.jpg' %}" height="200px" width="200px">
+                <!-- <img src="{% static 'images/django-logo.svg' %}" height="200px" width="200px">
+                <img src="{% static 'images/bootstrap-logo.svg' %}" height="200px" width="200px"> -->
 
                 {% elif url == "projects" %}
 
                 <p class="h1 header-text">Project Gallery</p>
                 <hr>
                 <p>Here are some things I've been working on.</p>
+                <img src="{% static 'images/under-construction.jpg' %}" height="200px" width="200px">
 
                 {% elif url == "cv" %}
 
