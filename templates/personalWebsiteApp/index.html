@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        #main-content-area {
+            color: white;
+            background-image: linear-gradient(blue, green);
+        }
+        .header-text {
+            font-family: 'Courier New', monospace;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Navigation</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about-me" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">About me</span> 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about-website" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">About this website</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/projects" class="nav-link px-0 align-middle ">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Project showcase</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/cv" class="nav-link px-0 align-middle">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">My CV</span> 
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            <div class="col py-3" id="main-content-area">
+                <!-- Done stupidly, I know -->
+                {% if url == "" %}
+
+                <p class="h1 header-text">Home Page</p>
+                <hr>
+                <p>Hello! Welcome to my website.</p>
+
+                {% elif url == "about-me" %}
+
+                <p class="h1 header-text">About Me</p>
+                <hr>
+                <p>I am Gabe.</p>
+
+                {% elif url == "about-website" %}
+
+                <p class="h1 header-text">About This Website</p>
+                <hr>
+                <p>I made it.</p>
+                <img src="{% static 'images/django-logo.svg' %}" height="200px" width="200px">
+                <img src="{% static 'images/bootstrap-logo.svg' %}" height="200px" width="200px">
+
+                {% elif url == "projects" %}
+
+                <p class="h1 header-text">Project Gallery</p>
+                <hr>
+                <p>Here are some things I've been working on.</p>
+
+                {% elif url == "cv" %}
+
+                <p class="h1 header-text">My Curriculum Vitae</p>
+                <hr>
+                <p>Here is my resume, feel free to download!</p>
+                <a href="{% static 'pdf/Gabriel_Lagace_Resume_2025.pdf' %}" download>
+                    <button class="btn btn-primary">Download CV</button>
+                </a>
+                <br><br>
+                <object class="pdf" data="{% static 'pdf/Gabriel_Lagace_Resume_2025.pdf' %}" width="800" height="950">
+
+                {% else %}
+
+                <p class="h1 header-text">Did you get lost?</p>
+                <hr>
+                <p>Nothing to see here...</p>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
