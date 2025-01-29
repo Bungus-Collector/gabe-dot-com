@@ -20,3 +20,7 @@ def projects_page(request):
 def cv_page(request):
     context = {"url": "cv"}
     return render(request, 'personalWebsiteApp/index.html', context)
+
+def ziad_page(request):
+    context = {"url": "cv"}
+    return render(request, 'personalWebsiteApp/ziad.html', context)
